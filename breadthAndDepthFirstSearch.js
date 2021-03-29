@@ -148,6 +148,7 @@ class BinarySearchTree {
 
     return list;
   }
+
   breadthFirstSearchRecursive(queue, list) {
     if (queue.length === 0) {
       return list;
@@ -166,6 +167,19 @@ class BinarySearchTree {
     return this.breadthFirstSearchRecursive(queue,list);
 
 
+  }
+
+  depthFirstSearchInOrder(currentNode, list) {
+    if (currentNode.left) {
+      this.depthFirstSearchInOrder(currentNode.left, list);
+    }
+    list.push(currentNode);
+
+    if (currentNode.right) {
+      this.depthFirstSearchInOrder(currentNode.right, list);
+    }
+
+    return list;
   }
 }
 
